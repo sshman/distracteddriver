@@ -1,0 +1,15 @@
+train_net: "/home/ubuntu/caffe2/caffe/models/googlenet_10class_finetune/googlenet10class.prototxt"
+test_net: "/home/ubuntu/caffe2/caffe/models/googlenet_10class_finetune/googlenet10class.prototxt"
+test_iter: 15
+test_interval: 50
+base_lr: 0.0001
+display: 50
+max_iter: 1200
+lr_policy: "step"
+gamma: 0.1
+stepsize: 20000
+snapshot: 100
+snapshot_prefix: "/home/ubuntu/caffe2/caffe/models/dd/google_fine_6"
+solver_mode: GPU
+iter_size: 1
+type: "Adam"
