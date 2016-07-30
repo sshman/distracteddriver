@@ -10,11 +10,11 @@ layer {
     mean_value: 104
     mean_value: 117
     mean_value: 123
-    mirror: true
+    mirror: false
  }
  data_param {
-    source: "data/ilsvrc12/ilsvrc12_train_lmdb"
-    batch_size: 64
+    source: "/home/ubuntu/distracteddriver/train_db"
+    batch_size: 8
     backend: LMDB
   }
   top: "data"
@@ -34,7 +34,7 @@ layer {
     mirror: false
  }
  data_param {
-    source: "data/ilsvrc12/ilsvrc12_train_lmdb"
+    source: "/home/ubuntu/distracteddriver/test_db"
     batch_size: 50
     backend: LMDB
   }
@@ -46,6 +46,14 @@ layer {
   top: "conv1_1"
   name: "conv1_1"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 64
     pad: 1
@@ -63,6 +71,14 @@ layer {
   top: "conv1_2"
   name: "conv1_2"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }  
   convolution_param {
     num_output: 64
     pad: 1
@@ -91,6 +107,14 @@ layer {
   top: "conv2_1"
   name: "conv2_1"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 128
     pad: 1
@@ -108,6 +132,14 @@ layer {
   top: "conv2_2"
   name: "conv2_2"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 128
     pad: 1
@@ -136,6 +168,14 @@ layer {
   top: "conv3_1"
   name: "conv3_1"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 256
     pad: 1
@@ -153,6 +193,14 @@ layer {
   top: "conv3_2"
   name: "conv3_2"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 256
     pad: 1
@@ -170,6 +218,14 @@ layer {
   top: "conv3_3"
   name: "conv3_3"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 256
     pad: 1
@@ -198,6 +254,14 @@ layer {
   top: "conv4_1"
   name: "conv4_1"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -215,6 +279,14 @@ layer {
   top: "conv4_2"
   name: "conv4_2"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -232,6 +304,14 @@ layer {
   top: "conv4_3"
   name: "conv4_3"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -260,6 +340,14 @@ layer {
   top: "conv5_1"
   name: "conv5_1"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -277,6 +365,14 @@ layer {
   top: "conv5_2"
   name: "conv5_2"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -294,6 +390,14 @@ layer {
   top: "conv5_3"
   name: "conv5_3"
   type: "Convolution"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 512
     pad: 1
@@ -322,6 +426,14 @@ layer {
   top: "fc6"
   name: "fc6"
   type: "InnerProduct"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   inner_product_param {
     num_output: 4096
   }
@@ -346,6 +458,14 @@ layer {
   top: "fc7"
   name: "fc7"
   type: "InnerProduct"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
   inner_product_param {
     num_output: 4096
   }
@@ -366,25 +486,33 @@ layer {
   }
 }
 layer {
-  name: "fc8"
+  name: "fc8_10"
   bottom: "fc7"
-  top: "fc8"
+  top: "fc8_10"
   type: "InnerProduct"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   inner_product_param {
-    num_output: 1000
+    num_output: 10
   }
 }
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8"
+  bottom: "fc8_10"
   bottom: "label"
   top: "loss/loss"
 }
 layer {
   name: "accuracy/top1"
   type: "Accuracy"
-  bottom: "fc8"
+  bottom: "fc8_10"
   bottom: "label"
   top: "accuracy@1"
   include: { phase: TEST }
@@ -395,7 +523,7 @@ layer {
 layer {
   name: "accuracy/top5"
   type: "Accuracy"
-  bottom: "fc8"
+  bottom: "fc8_10"
   bottom: "label"
   top: "accuracy@5"
   include: { phase: TEST }
