@@ -1,0 +1,16 @@
+train_net: "distracteddriver/nets/vgg16/VGG_ILSVRC_16_layers_train_val_finetune_all_layers.prototxt"
+test_net: "distracteddriver/nets/vgg16/VGG_ILSVRC_16_layers_train_val_finetune_all_layers.prototxt"
+test_iter: 100
+test_interval: 50
+base_lr: 0.0001
+display: 50
+max_iter: 50000
+lr_policy: "step"
+gamma: 0.1
+stepsize: 20000
+snapshot: 100
+snapshot_prefix: "/home/skyrus/work/sandbox/distracteddriver/nets/vgg16/vgg16_snapshot"
+solver_mode: GPU
+iter_size: 1
+type: "Adam"
+
